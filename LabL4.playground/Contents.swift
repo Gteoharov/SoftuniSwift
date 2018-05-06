@@ -53,21 +53,74 @@ var structCup = CupStruct(name: "Struct")
 
 
 // Case : You must implement a program for registering different vehicles. There are few main types of vehicles: Car, Motorcycle, Truck, Long Vehicle, Special Vehicle.
-
+//
 // The properties that each of the vehicle types are: Registration number, Engine, Hps, VIN number. The card has also number of seats, motorcycle - max speed, Truck and Long Vehicle - maximum load, Special Vehicle - special vehicle type and other information.
 
-//class Vehicle {
-//    var registrationNumber: String
-//    var engine: String
-//    var hps: Int
-//    var vinNumber: String
-//
-//    init(registerNumber: String, engine: String, hps: Int, vinNumber: String) {
-//        self.registrationNumber = registerNumber
-//        self.engine = engine
-//        self.hps = hps
-//        self.vinNumber = vinNumber
-//    }
-//}
+class Vehicle {
+    var registrationNumber: String
+    var engine: String
+    var hps: Int
+    var vinNumber: String
+
+    init(registerNumber: String, engine: String, hps: Int, vinNumber: String) {
+        self.registrationNumber = registerNumber
+        self.engine = engine
+        self.hps = hps
+        self.vinNumber = vinNumber
+    }
+}
+
+class Car: Vehicle {
+    var numberOfSeats: Int
+    init(registerNumber: String, engine: String, hps: Int, vinNumber: String, numberOfSeats: Int) {
+        self.numberOfSeats = numberOfSeats
+        super.init(registerNumber: registerNumber, engine: engine, hps: hps, vinNumber: vinNumber)
+    }
+}
+
+class Motorcycle: Vehicle {
+    var maxSpeed: Int
+    init(registerNumber: String, engine: String, hps: Int, vinNumber: String, speed: Int) {
+        self.maxSpeed = speed
+        super.init(registerNumber: registerNumber, engine: engine, hps: hps, vinNumber: vinNumber)
+    }
+}
+
+class Truck: Vehicle {
+    var maximumLoad: Int
+    init(registerNumber: String, engine: String, hps: Int, vinNumber: String, maximumLoad: Int) {
+        self.maximumLoad = maximumLoad
+        super.init(registerNumber: registerNumber, engine: engine, hps: hps, vinNumber: vinNumber)
+    }
+}
+
+class longVehicle: Truck {
+    override init(registerNumber: String, engine: String, hps: Int, vinNumber: String, maximumLoad: Int) {
+        super.init(registerNumber: registerNumber, engine: engine, hps: hps, vinNumber: vinNumber, maximumLoad: maximumLoad)
+    }
+}
+
+
+//Finish the case with all other types of vehicles.
+//Make a new class called policemen. It must have property name, rank and must have function checkInformation(vehicle) that prints all the data for a vehicle.
+
+class Policemen {
+    var name: String
+    var rank: String
+    
+    init(name: String, rank: String) {
+        self.name = name
+        self.rank = rank
+    }
+    
+    func checkInformation(vehicle: Vehicle) {
+        print("Vehicle with registration number:\(vehicle.registrationNumber)\nHPS: \(vehicle.hps) \ntype of engine: \(vehicle.engine) \nVin number: \(vehicle.vinNumber)")
+    }
+}
+
+
+var ferrari = Car(registerNumber: "CT 1414 CT", engine: "Diesel", hps: 300, vinNumber: "DSDS14235DSAD142DASD", numberOfSeats: 2)
+var officer = Policemen(name: "Qnkov", rank: "Officer")
+officer.checkInformation(vehicle: ferrari)
 
 
