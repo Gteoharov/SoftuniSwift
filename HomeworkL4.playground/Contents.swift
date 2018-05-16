@@ -36,7 +36,7 @@ class Student : Person {
         if marks.count < 1 {
             return 0
         } else {
-        return average
+            return average
         }
     }
 }
