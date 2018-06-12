@@ -28,9 +28,9 @@ class RecipiesDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.dishImage.image = UIImage(named: self.recept?[TypeOfData.pictureOfDish] ?? "defaultDishPicture")
-        self.dishName.text = self.recept?[TypeOfData.dishName] ?? "Dish name is mising"
+        self.dishName.text = self.recept?[TypeOfData.dishName]?.capitalized ?? "Dish name is mising"
         self.prepTime.text = self.recept?[TypeOfData.timeToCook] ?? "00:00h"
-        self.descRecipeTextView.text = self.recept?[TypeOfData.recipe] ?? "no recipe yet"
+        self.descRecipeTextView.text = self.recept?[TypeOfData.recipe]?.capitalized ?? "no recipe yet"
     }
 
     override func didReceiveMemoryWarning() {
