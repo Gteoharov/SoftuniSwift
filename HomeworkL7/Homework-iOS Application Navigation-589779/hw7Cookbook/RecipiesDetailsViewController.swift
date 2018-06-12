@@ -15,11 +15,12 @@ class RecipiesDetailsViewController: UIViewController {
     @IBOutlet weak var descRecipeTextView: UITextView!
     
     
+    
     var recept:[TypeOfData:String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.dishImage.alpha = 0
         // Do any additional setup after loading the view.
     }
     
@@ -37,6 +38,21 @@ class RecipiesDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.3, animations: {
+            let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation")
+            rotation.toValue = Double.pi * 2
+            rotation.duration = 1 // or however long you want ...
+            rotation.isCumulative = true
+            rotation.repeatCount = 1
+            self.dishImage.layer.add(rotation, forKey: "rotationAnimation")
+            self.dishImage.alpha = 1
+            
+        })
+    }
+    
+
 
     /*
     // MARK: - Navigation
