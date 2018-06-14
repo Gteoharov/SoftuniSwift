@@ -52,18 +52,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        loadColorSetting()
     }
     
     override func viewDidLayoutSubviews() {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        loadColorSetting()
     }
-    
     
     private func calculate(_ number1: Double, action: Actions, _ number2: Double) -> Double{
         switch action{
@@ -114,7 +112,11 @@ class ViewController: UIViewController {
         self.displayLabel.text = displayText
     }
     
-
+    func loadColorSetting() {
+        let backgroundColor = ColorData.color[SegmentColorProperty.backroundColor] ?? [Float(0.0)]
+        
+        self.view.backgroundColor = UIColor(red: CGFloat(backgroundColor[0]), green: CGFloat(backgroundColor[1]), blue: CGFloat(backgroundColor[2]), alpha: 1)
+    }
 
 }
 

@@ -39,6 +39,7 @@
                             </segmentedControl>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PKM-CB-U7t">
                                 <rect key="frame" x="34" y="117" width="307" height="31"/>
+                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QIn-qV-eWT"/>
                                 </constraints>
@@ -48,11 +49,12 @@
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-3x-9gj">
                                 <rect key="frame" x="34" y="177" width="307" height="31"/>
+                                <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U3W-kl-Zw1"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="blueSlider:" destination="6ZZ-ah-weL" eventType="valueChanged" id="pSm-Cv-hbM"/>
+                                    <action selector="greenSlider:" destination="6ZZ-ah-weL" eventType="valueChanged" id="Auo-0x-CV8"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="325-fJ-eKX">
@@ -61,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="30" id="7c0-cn-Qpw"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="greenSlider:" destination="6ZZ-ah-weL" eventType="valueChanged" id="Y6c-YW-xac"/>
+                                    <action selector="blueSlider:" destination="6ZZ-ah-weL" eventType="valueChanged" id="Y6c-YW-xac"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7S-h5-EwX">
@@ -95,6 +97,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="4ih-5c-zku"/>
+                    <connections>
+                        <outlet property="blueSliderOutlet" destination="325-fJ-eKX" id="xN6-r0-xfX"/>
+                        <outlet property="greenSliderOutlet" destination="eMk-3x-9gj" id="sAT-L6-ZeR"/>
+                        <outlet property="redSliderOutlet" destination="PKM-CB-U7t" id="l00-Gq-Rdm"/>
+                        <outlet property="saveButtonOutlet" destination="s7S-h5-EwX" id="VuR-Qb-kAf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcZ-fa-dZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

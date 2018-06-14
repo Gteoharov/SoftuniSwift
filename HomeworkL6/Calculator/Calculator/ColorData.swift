@@ -17,7 +17,7 @@ enum SegmentColorProperty {
 class ColorData {
     static var color: [SegmentColorProperty: [Float]] =
     [
-        SegmentColorProperty.backroundColor: [0.1, 1.0, 0.2],
+        SegmentColorProperty.backroundColor: [0.0, 0.0, 0.0],
         SegmentColorProperty.tintColor: [0.2, 0.4, 0.5],
         SegmentColorProperty.textColor: [1.0, 0.1, 1.0]
     ]
