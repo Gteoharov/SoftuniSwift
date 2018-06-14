@@ -13,6 +13,7 @@
 		1062293A1F227A160053A662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106229391F227A160053A662 /* Assets.xcassets */; };
 		1062293D1F227A160053A662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1062293B1F227A160053A662 /* LaunchScreen.storyboard */; };
 		106229451F2289900053A662 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106229441F2289900053A662 /* RoundButton.swift */; };
+		2146C9B420D30E3500B3D221 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2146C9B320D30E3500B3D221 /* ColorData.swift */; };
 		21B21EF820D2A9C8005AC5D6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B21EF720D2A9C8005AC5D6 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		1062293C1F227A160053A662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1062293E1F227A160053A662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		106229441F2289900053A662 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		2146C9B320D30E3500B3D221 /* ColorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
 		21B21EF720D2A9C8005AC5D6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 				106229391F227A160053A662 /* Assets.xcassets */,
 				1062293B1F227A160053A662 /* LaunchScreen.storyboard */,
 				1062293E1F227A160053A662 /* Info.plist */,
+				2146C9B320D30E3500B3D221 /* ColorData.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				106229451F2289900053A662 /* RoundButton.swift in Sources */,
 				106229351F227A160053A662 /* ViewController.swift in Sources */,
+				2146C9B420D30E3500B3D221 /* ColorData.swift in Sources */,
 				106229331F227A160053A662 /* AppDelegate.swift in Sources */,
 				21B21EF820D2A9C8005AC5D6 /* SettingsViewController.swift in Sources */,
 			);

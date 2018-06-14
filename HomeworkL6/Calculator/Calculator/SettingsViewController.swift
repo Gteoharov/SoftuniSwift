@@ -8,10 +8,22 @@
 
 import UIKit
 
+enum ColorName {
+    case red
+    case blue
+    case green
+}
+
 class SettingsViewController: UIViewController {
 
+    private var color: [SegmentColorProperty : [Float]] =
+        [
+            SegmentColorProperty.backroundColor : [0.5, 0.5, 0.5],
+            SegmentColorProperty.tintColor : [0.5, 0.5, 0.5],
+            SegmentColorProperty.textColor : [0.5, 0.5, 0.5]
+        ]
     
-    @IBOutlet weak var segment: UISegmentedControl!
+    private var currSegment: SegmentColorProperty = .backroundColor
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,22 +31,34 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func segmentTapped(_ sender: UISegmentedControl) {
-        let getIndex = segment.selectedSegmentIndex
-        
-        switch getIndex {
+    @IBAction func segmentMenuChoose(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
         case 0:
-            view.backgroundColor = UIColor()
+            currSegment = .backroundColor
+        case 1:
+            currSegment = .tintColor
+        case 2:
+            currSegment = .textColor
         default:
-                break;
+            break
         }
     }
     
+    @IBAction func redSlider(_ sender: UISlider) {
+        
+    }
+    
+    @IBAction func blueSlider(_ sender: UISlider) {
+        
+    }
+    
     @IBAction func greenSlider(_ sender: UISlider) {
+        
     }
     
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        ColorData.color = self.color
     }
     
 }

@@ -34,7 +34,7 @@
                                     <segment title="textColour"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentTapped:" destination="6ZZ-ah-weL" eventType="valueChanged" id="fTc-97-pPb"/>
+                                    <action selector="segmentMenuChoose:" destination="6ZZ-ah-weL" eventType="valueChanged" id="fTc-97-pPb"/>
                                 </connections>
                             </segmentedControl>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PKM-CB-U7t">
@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="height" constant="30" id="QIn-qV-eWT"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="greenSlider:" destination="6ZZ-ah-weL" eventType="valueChanged" id="NYr-Ng-ZmR"/>
+                                    <action selector="redSlider:" destination="6ZZ-ah-weL" eventType="valueChanged" id="yGe-Df-Uxz"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-3x-9gj">
@@ -51,12 +51,18 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U3W-kl-Zw1"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="blueSlider:" destination="6ZZ-ah-weL" eventType="valueChanged" id="pSm-Cv-hbM"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="325-fJ-eKX">
                                 <rect key="frame" x="34" y="237" width="307" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7c0-cn-Qpw"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="greenSlider:" destination="6ZZ-ah-weL" eventType="valueChanged" id="Y6c-YW-xac"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7S-h5-EwX">
                                 <rect key="frame" x="141" y="327" width="93" height="42"/>
@@ -89,9 +95,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="4ih-5c-zku"/>
-                    <connections>
-                        <outlet property="segment" destination="tRL-tJ-qfX" id="jgd-2P-JQk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcZ-fa-dZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
