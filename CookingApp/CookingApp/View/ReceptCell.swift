@@ -14,6 +14,7 @@ class ReceptCell: UITableViewCell {
     @IBOutlet weak var cookingTime: UILabel!
     @IBOutlet weak var imgOfDish: UIImageView!
     
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

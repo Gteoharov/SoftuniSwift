@@ -19,6 +19,8 @@ class RecipeDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.dishImg.alpha = 0.3
         // Do any additional setup after loading the view.
     }
@@ -43,5 +45,38 @@ class RecipeDetailsViewController: UIViewController {
             self.dishImg.alpha = 1
             
         })
+    }
+}
+
+
+extension UIView {
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        
+        get{
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            return UIColor(cgColor: layer.borderColor!)
+        }
+        set {
+            layer.borderColor = borderColor?.cgColor
+        }
     }
 }
