@@ -13,6 +13,8 @@
 		21EE5B1220D45C9C00123E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21EE5B1120D45C9C00123E7D /* Assets.xcassets */; };
 		21EE5B1520D45C9C00123E7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EE5B1320D45C9C00123E7D /* LaunchScreen.storyboard */; };
 		21EE5B2220D4669C00123E7D /* RecipesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EE5B2120D4669C00123E7D /* RecipesData.swift */; };
+		21F1609520D66495001C463C /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1609420D66495001C463C /* RecipeDetailsViewController.swift */; };
+		21F1609720D665FB001C463C /* ReceptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1609620D665FB001C463C /* ReceptCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		21EE5B1420D45C9C00123E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21EE5B1620D45C9C00123E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21EE5B2120D4669C00123E7D /* RecipesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesData.swift; sourceTree = "<group>"; };
+		21F1609420D66495001C463C /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		21F1609620D665FB001C463C /* ReceptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		21EE5B1D20D45EAF00123E7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				21F1609620D665FB001C463C /* ReceptCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				211C01D720D5C4CD008D12D5 /* CookTableViewController.swift */,
+				21F1609420D66495001C463C /* RecipeDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F1609720D665FB001C463C /* ReceptCell.swift in Sources */,
 				21EE5B0B20D45C9C00123E7D /* AppDelegate.swift in Sources */,
 				211C01D820D5C4CD008D12D5 /* CookTableViewController.swift in Sources */,
 				21EE5B2220D4669C00123E7D /* RecipesData.swift in Sources */,
+				21F1609520D66495001C463C /* RecipeDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

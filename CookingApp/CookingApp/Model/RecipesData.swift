@@ -194,7 +194,7 @@ struct RecipesData {
         ],
         
         [.dishName : "Пълнени дюли",
-         .timeToCook : "",
+         .timeToCook : "30 мин.",
          .pictureOfDish : "pulneniDyuli",
          .favorite: "",
          .recipe: """

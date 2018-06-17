@@ -10,7 +10,6 @@ import UIKit
 
 class CookTableViewController: UITableViewController {
     
-    let recipe = RecipesData.recipes
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +25,16 @@ class CookTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let numberOfItems = self.recipe.count
+        let numberOfItems = RecipesData.recipes.count
         return numberOfItems
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! ReceptCell
 
-        cell.textLabel?.text = recipe[indexPath.row][.dishName]
-        cell.detailTextLabel?.text = recipe[indexPath.row][.timeToCook]
+        cell.nameOfDish.text = RecipesData.recipes[indexPath.row][.dishName]?.capitalized
+        cell.cookingTime.text = RecipesData.recipes[indexPath.row][.timeToCook]
+        cell.imgOfDish.image = UIImage(named: RecipesData.recipes[indexPath.row][.pictureOfDish] ?? "defaultDishPicture")
 
         return cell
     }
@@ -48,24 +48,27 @@ class CookTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            RecipesData.recipes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
-    /*
+
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        let receptData = RecipesData.recipes[fromIndexPath.row]
+        RecipesData.recipes.remove(at: fromIndexPath.row)
+        RecipesData.recipes.insert(receptData, at: to.row)
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
     /*
     // Override to support conditional rearranging of the table view.
