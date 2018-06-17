@@ -10,14 +10,19 @@ import UIKit
 
 class CookTableViewController: UITableViewController {
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -66,8 +71,12 @@ class CookTableViewController: UITableViewController {
         RecipesData.recipes.insert(receptData, at: to.row)
     }
     
+    
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 
     /*
@@ -78,14 +87,33 @@ class CookTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
+        
         // Pass the selected object to the new view controller.
+        guard let segueIdentifier = segue.identifier else {
+            return
+        }
+        
+        switch segueIdentifier {
+        case "receptDetailsSegueIdentifier":
+            
+            guard let cell = sender as? UITableViewCell else {
+                return
+            }
+            
+            guard let indexPath = self.tableView.indexPath(for: cell) else {
+                return
+            }
+            
+            (segue.destination as! RecipeDetailsViewController).recipes = RecipesData.recipes[indexPath.row]
+        default:
+            break
+        }
     }
-    */
 
 }

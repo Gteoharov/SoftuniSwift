@@ -63,7 +63,7 @@
                                     <outlet property="cookingTime" destination="XpD-XT-Fov" id="MPE-6Y-uIQ"/>
                                     <outlet property="imgOfDish" destination="3DH-r1-EIz" id="Mql-9o-w5R"/>
                                     <outlet property="nameOfDish" destination="tdv-Fj-klv" id="x3E-N9-FUX"/>
-                                    <segue destination="wg5-Pf-qQA" kind="show" id="Ljr-E2-qMS"/>
+                                    <segue destination="wg5-Pf-qQA" kind="show" identifier="receptDetailsSegueIdentifier" id="Ljr-E2-qMS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,12 +81,12 @@
         <!--Recipe Details View Controller-->
         <scene sceneID="FXe-lR-Isa">
             <objects>
-                <viewController id="wg5-Pf-qQA" customClass="RecipeDetailsViewController" customModule="CookingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeDetailViewController" id="wg5-Pf-qQA" customClass="RecipeDetailsViewController" customModule="CookingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="43N-Wp-IQT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xxL-en-5U4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xxL-en-5U4">
                                 <rect key="frame" x="67" y="64" width="240" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="02D-AO-AyZ"/>
