@@ -10,6 +10,10 @@ import UIKit
 
 class RecipeDetailsViewController: UIViewController {
     
+    var dishDescriptionText: String = ""
+    var timeToCookText: String = ""
+    var dishImgText: String = ""
+    
     @IBOutlet weak var dishImg: UIImageView!
     @IBOutlet weak var timeToCook: UILabel!
     @IBOutlet weak var dishDescription: UITextView!
@@ -28,9 +32,9 @@ class RecipeDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.dishImg.image = UIImage(named: self.recipes?[TypeOfData.pictureOfDish] ?? "defaultDishPicture")
-        self.timeToCook.text = self.recipes?[TypeOfData.timeToCook] ?? "00:00 min"
-        self.dishDescription.text = self.recipes?[TypeOfData.recipe] ?? "no recipe yet"
+        self.dishImg.image = UIImage(named: dishImgText)
+        self.timeToCook.text = timeToCookText
+        self.dishDescription.text = dishDescriptionText
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -11,6 +11,7 @@ import UIKit
 class CookTableViewController: UITableViewController {
     
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -72,12 +73,19 @@ class CookTableViewController: UITableViewController {
     }
     
     
-    
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let data = RecipesData.recipes[indexPath.row]
         
+        let dataViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RecipeDetailsViewController") as! RecipeDetailsViewController
+        dataViewController.dishDescriptionText = data[.recipe]!
+        dataViewController.timeToCookText = data[.timeToCook]!
+        dataViewController.dishImgText = data[.pictureOfDish]!
+
+        
+        
+        self.navigationController?.pushViewController(dataViewController, animated: true)
     }
+    
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -91,29 +99,29 @@ class CookTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        
-        // Pass the selected object to the new view controller.
-        guard let segueIdentifier = segue.identifier else {
-            return
-        }
-        
-        switch segueIdentifier {
-        case "receptDetailsSegueIdentifier":
-            
-            guard let cell = sender as? UITableViewCell else {
-                return
-            }
-            
-            guard let indexPath = self.tableView.indexPath(for: cell) else {
-                return
-            }
-            
-            (segue.destination as! RecipeDetailsViewController).recipes = RecipesData.recipes[indexPath.row]
-        default:
-            break
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destinationViewController.
+//
+//        // Pass the selected object to the new view controller.
+//        guard let segueIdentifier = segue.identifier else {
+//            return
+//        }
+//
+//        switch segueIdentifier {
+//        case "receptDetailsSegueIdentifier":
+//
+//            guard let cell = sender as? UITableViewCell else {
+//                return
+//            }
+//
+//            guard let indexPath = self.tableView.indexPath(for: cell) else {
+//                return
+//            }
+//
+//            (segue.destination as! RecipeDetailsViewController).recipes = RecipesData.recipes[indexPath.row]
+//        default:
+//            break
+//        }
+//    }
 
 }
