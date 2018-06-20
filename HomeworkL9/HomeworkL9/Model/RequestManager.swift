@@ -95,7 +95,7 @@ import Foundation
         /* Create session, and optionally set a URLSessionDelegate. */
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         
-        guard let URL = URL(string: "https://softuniresttest-1f4cd.firebaseio.com/Users.json") else {return}
+        guard let URL = URL(string: "https://softuniresttest-1f4cd.firebaseio.com/Users/malkokote1.json") else {return}
         var request = URLRequest(url: URL)
         request.httpMethod = "GET"
         
@@ -108,6 +108,15 @@ import Foundation
                 
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String:Any?]
+                    if let age = json["Age"] as? String {
+                        UserDefaults.standard.set(age, forKey: "age")
+                    }
+                    if let name = json["Name"] as? String {
+                        UserDefaults.standard.set(name, forKey: "username")
+                    }
+                    UserDefaults.standard.synchronize()
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("userDataUpdate"), object: nil)
                 } catch {
                     
                 }

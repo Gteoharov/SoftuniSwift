@@ -20,7 +20,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        RequestManager.readData()
+        
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "userDataUpdated"), object: nil, queue: nil) { (notification) in
+            // ⬇ actions to perform on notifiction
+            
+            // UI change need to happend on main thread
+            DispatchQueue.main.async {
+                if let username = UserDefaults.standard.string(forKey: "username") {
+                    self.nameTextField.text = username
+                }
+                
+                if let age = UserDefaults.standard.string(forKey: "age") {
+                    self.ageTextField.text = age
+                }
+            }
+        }
     }
     
     func showAlertMessage(_ message: String) {
@@ -54,6 +70,10 @@ class ViewController: UIViewController {
             self.showAlertMessage("Missing required data.")
             return
         }
+        
+        UserDefaults.standard.set(name, forKey: "username")
+        UserDefaults.standard.set(age, forKey: "age")
+        
         
         RequestManager.registerUser(user: name, userAge: age, userPassword: password, completion: { message in
             DispatchQueue.main.async {
