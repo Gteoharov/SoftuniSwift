@@ -7,4 +7,5 @@ target 'Messanger' do
 
   # Pods for Messanger
   pod 'SVProgressHUD'
+  pod 'lottie-ios'
 end

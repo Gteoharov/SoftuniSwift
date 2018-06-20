@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HomeworkL9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z57-x3-Zgv">
+                                <rect key="frame" x="168.5" y="328.5" width="37" height="30"/>
+                                <state key="normal" title="Write"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wu5-2A-ay8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aj0-6j-9cX">
+                                <rect key="frame" x="169.5" y="375" width="35" height="30"/>
+                                <state key="normal" title="Read"/>
+                                <connections>
+                                    <action selector="readButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X7e-4t-RUE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mdq-se-xiN">
+                                <rect key="frame" x="124" y="94" width="127" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5so-GU-EgA">
+                                <rect key="frame" x="130" y="148" width="115" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A5t-wI-ssG">
+                                <rect key="frame" x="110.5" y="206" width="153.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNR-dI-gg9">
+                                <rect key="frame" x="158.5" y="266" width="57" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qhW-U1-o9Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mdq-se-xiN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="FLD-lF-HiD"/>
+                            <constraint firstItem="Aj0-6j-9cX" firstAttribute="top" secondItem="z57-x3-Zgv" secondAttribute="bottom" constant="16.5" id="HAd-th-H4o"/>
+                            <constraint firstItem="Aj0-6j-9cX" firstAttribute="centerX" secondItem="z57-x3-Zgv" secondAttribute="centerX" id="KKw-jG-WIN"/>
+                            <constraint firstItem="5so-GU-EgA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="T5b-Fw-8lO"/>
+                            <constraint firstItem="MNR-dI-gg9" firstAttribute="top" secondItem="A5t-wI-ssG" secondAttribute="bottom" constant="30" id="adi-mK-ZGa"/>
+                            <constraint firstItem="MNR-dI-gg9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gew-2z-u4T"/>
+                            <constraint firstItem="A5t-wI-ssG" firstAttribute="top" secondItem="5so-GU-EgA" secondAttribute="bottom" constant="28" id="hEc-YP-rNk"/>
+                            <constraint firstItem="z57-x3-Zgv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="his-9O-mzD"/>
+                            <constraint firstItem="A5t-wI-ssG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jdY-9O-SdO"/>
+                            <constraint firstItem="z57-x3-Zgv" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="l9v-RB-Ui0"/>
+                            <constraint firstItem="5so-GU-EgA" firstAttribute="top" secondItem="mdq-se-xiN" secondAttribute="bottom" constant="24" id="pIH-oS-qlD"/>
+                            <constraint firstItem="mdq-se-xiN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zXH-mP-y4R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ageTextField" destination="5so-GU-EgA" id="4ZG-iT-ph2"/>
+                        <outlet property="nameTextField" destination="mdq-se-xiN" id="VEC-oI-6vO"/>
+                        <outlet property="passwordTextField" destination="A5t-wI-ssG" id="c6j-i1-3aI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
