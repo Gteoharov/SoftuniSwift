@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RequestManager {
+@objc class RequestManager: NSObject {
     
     static var requestNumber = 0
     
@@ -53,7 +53,7 @@ class RequestManager {
         session.finishTasksAndInvalidate()
     }
     
-    class func registerUser(user userName: String, userAge: String, userPassword: String) {
+    class func registerUser(user userName: String, userAge: String, userPassword: String, completion: @escaping (_ message: String)->()) {
         let sessionCongig = URLSessionConfiguration.default
         
         let session = URLSession(configuration: sessionCongig, delegate: nil, delegateQueue: nil)
@@ -78,16 +78,17 @@ class RequestManager {
         /* Start a new Task */
         let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             if (error == nil) {
-                // Success
-                let statusCode = (response as! HTTPURLResponse).statusCode
-                print("URL Session Task Succeeded: HTTP \(statusCode)")
+                completion("Success")
+            }
+            else {
+               completion(error!.localizedDescription)
             }
         })
         task.resume()
         session.finishTasksAndInvalidate()
     }
     
-    class func readData() {
+@objc   class func readData() {
     
         let sessionConfig = URLSessionConfiguration.default
         
@@ -107,7 +108,6 @@ class RequestManager {
                 
                 do {
                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String:Any?]
-                    print(json["RequestNumber"]! ?? "No value")
                 } catch {
                     
                 }

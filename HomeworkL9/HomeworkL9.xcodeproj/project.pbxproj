@@ -13,6 +13,7 @@
 		215DE59120DAADAB00B3AE4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 215DE59020DAADAB00B3AE4A /* Assets.xcassets */; };
 		215DE59420DAADAB00B3AE4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215DE59220DAADAB00B3AE4A /* LaunchScreen.storyboard */; };
 		215DE59D20DAAE9600B3AE4A /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DE59C20DAAE9600B3AE4A /* RequestManager.swift */; };
+		21E7BFAD20DAF8E700695674 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E7BFAC20DAF8E700695674 /* MyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		215DE59320DAADAB00B3AE4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		215DE59520DAADAB00B3AE4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		215DE59C20DAAE9600B3AE4A /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		21E7BFAA20DAF8E700695674 /* HomeworkL9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeworkL9-Bridging-Header.h"; sourceTree = "<group>"; };
+		21E7BFAB20DAF8E700695674 /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		21E7BFAC20DAF8E700695674 /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		215DE58820DAADA900B3AE4A /* HomeworkL9 */ = {
 			isa = PBXGroup;
 			children = (
+				21E7BFA920DAF89E00695674 /* Obj-C */,
 				215DE59F20DAAEA400B3AE4A /* Controller */,
 				215DE59E20DAAE9D00B3AE4A /* View */,
 				215DE59B20DAAE7D00B3AE4A /* Model */,
@@ -91,6 +96,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		21E7BFA920DAF89E00695674 /* Obj-C */ = {
+			isa = PBXGroup;
+			children = (
+				21E7BFAB20DAF8E700695674 /* MyViewController.h */,
+				21E7BFAC20DAF8E700695674 /* MyViewController.m */,
+				21E7BFAA20DAF8E700695674 /* HomeworkL9-Bridging-Header.h */,
+			);
+			path = "Obj-C";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,6 +138,7 @@
 				TargetAttributes = {
 					215DE58520DAADA900B3AE4A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -164,6 +180,7 @@
 			files = (
 				215DE59D20DAAE9600B3AE4A /* RequestManager.swift in Sources */,
 				215DE58C20DAADA900B3AE4A /* ViewController.swift in Sources */,
+				21E7BFAD20DAF8E700695674 /* MyViewController.m in Sources */,
 				215DE58A20DAADA900B3AE4A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7ZH7VGKXU6;
 				INFOPLIST_FILE = HomeworkL9/Info.plist;
@@ -317,6 +335,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.teoharov.HomeworkL9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeworkL9/Obj-C/HomeworkL9-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -326,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7ZH7VGKXU6;
 				INFOPLIST_FILE = HomeworkL9/Info.plist;
@@ -335,6 +356,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.teoharov.HomeworkL9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeworkL9/Obj-C/HomeworkL9-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -55,7 +55,19 @@ class ViewController: UIViewController {
             return
         }
         
-        RequestManager.registerUser(user: name, userAge: age, userPassword: password)
+        RequestManager.registerUser(user: name, userAge: age, userPassword: password, completion: { message in
+            DispatchQueue.main.async {
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyViewController") as! MyViewController
+                
+                
+                
+                self.present(viewController, animated: true, completion: {
+                    viewController.setupLabels(name,
+                                               withAge: age,
+                                               withHashedPass: password)
+                })
+            }
+        })
     }
 
 }
