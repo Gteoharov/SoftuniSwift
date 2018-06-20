@@ -33,12 +33,10 @@ class ViewController: UIViewController {
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         guard let name = nameTextField.text else {
-            print("Incorrect data")
             return
         }
         
         guard let age = ageTextField.text else {
-            print("Empty field")
             return
         }
         
@@ -50,7 +48,6 @@ class ViewController: UIViewController {
             print("Empty field!")
             return
         }
-        
         
         RequestManager.registerUser(user: name, userAge: age, userPassword: password)
     }
