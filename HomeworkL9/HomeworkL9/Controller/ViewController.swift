@@ -23,6 +23,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    func showAlertMessage(_ message: String) {
+        let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok", style: .default) { (alertAction) in
+            
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func buttonTapped(_ sender: UIButton) {
         RequestManager.sendRequest()
     }
@@ -32,20 +41,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        guard let name = nameTextField.text else {
-            return
+        guard let name = nameTextField.text,
+              let age = ageTextField.text,
+              let password = passwordTextField.text
+            else {
+                self.showAlertMessage("Incorrect data")
+                return
         }
         
-        guard let age = ageTextField.text else {
-            return
-        }
         
-        guard let password = passwordTextField.text else {
-            return
-        }
-        
-        guard name.count > 0, age.count > 0, password.count > 0 else {
-            print("Empty field!")
+        guard name.count > 0, age.count > 0, password.count > 6 else {
+            self.showAlertMessage("Missing required data.")
             return
         }
         
