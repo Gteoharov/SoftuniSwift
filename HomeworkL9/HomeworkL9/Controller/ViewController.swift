@@ -32,7 +32,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        RequestManager.registerUser(user: nameTextField.text!, userAge: ageTextField.text!, userPassword: passwordTextField.text!)
+        guard let name = nameTextField.text else {
+            print("Incorrect data")
+            return
+        }
+        
+        guard let age = ageTextField.text else {
+            print("Empty field")
+            return
+        }
+        
+        guard let password = passwordTextField.text else {
+            return
+        }
+        
+        guard name.count > 0, age.count > 0, password.count > 0 else {
+            print("Empty field!")
+            return
+        }
+        
+        
+        RequestManager.registerUser(user: name, userAge: age, userPassword: password)
     }
 
 }
