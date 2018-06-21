@@ -17,74 +17,111 @@ class ProfileDetailsViewController: UIViewController {
     @IBOutlet weak var funButtonOutlet: UIButton!
     @IBOutlet weak var lottieButtonOutlet: UIButton!
     
+    
+   
+    var animationView = LOTAnimationView(name: "MotionCorpse-Jrcanest")
     var image: UIImage?
     var name: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.funButtonOutlet.layer.cornerRadius = 5
-        self.lottieButtonOutlet.layer.cornerRadius = 5
+        
 
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let animationView = LOTAnimationView(name: "loading")
+        self.funButtonOutlet.layer.cornerRadius = 5
+        self.lottieButtonOutlet.layer.cornerRadius = 5
+        animationView = LOTAnimationView(name: "loading")
         
         self.view.addSubview(animationView)
         
         animationView.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 6.1)
         
         animationView.play(completion: { (completed) in
-            animationView.removeFromSuperview()
+            self.animationView.removeFromSuperview()
         })
         self.nameLabel.text = name
         self.profilePicture.image = image
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.width / 2
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func tapGesture() {
+        self.view.subviews.forEach({$0.layer.removeAllAnimations()})
+        self.view.layer.removeAllAnimations()
+        self.view.layoutIfNeeded()
+        animationView.stop()
+    }
+    
     @IBAction func coolAnimationTapped(_ sender: UIButton) {
-        let animationView = LOTAnimationView(name: "MotionCorpse-Jrcanest")
         
+        animationView = LOTAnimationView(name: "MotionCorpse-Jrcanest")
         self.view.addSubview(animationView)
         
         animationView.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
         
         animationView.play(completion: { (completed) in
-            animationView.removeFromSuperview()
+            self.animationView.removeFromSuperview()
         })
         
     }
+    
+
     
     
     @IBAction func lottieButtonTapped(_ sender: UIButton) {
-        let animationView = LOTAnimationView(name: "LottieLogo1_masked")
-        
+        animationView = LOTAnimationView(name: "LottieLogo1_masked")
+
         self.view.addSubview(animationView)
-        
+
         animationView.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
-        
+
         animationView.play(completion: { (completed) in
-            animationView.removeFromSuperview()
+            self.animationView.removeFromSuperview()
         })
+        
     }
     
+    
+    
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func rotateButtonTapped(_ sender: UIButton) {
+        sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.20),
+                       initialSpringVelocity: CGFloat(6.0),
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
+        profileImageRotate()
     }
-    */
+    
+    private func profileImageRotate() {
+        UIView.animate(withDuration: 0.3, animations: {
+            let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation")
+            rotation.toValue = Double.pi * 2
+            rotation.duration = 1 // or however long you want ...
+            rotation.isCumulative = true
+            rotation.repeatCount = 1
+            self.profilePicture.layer.add(rotation, forKey: "rotationAnimation")
+        })
+    }
 
 }
