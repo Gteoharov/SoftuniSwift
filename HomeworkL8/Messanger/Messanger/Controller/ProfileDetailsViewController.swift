@@ -8,6 +8,7 @@
 
 import UIKit
 import Lottie
+import AudioToolbox
 
 class ProfileDetailsViewController: UIViewController {
     @IBOutlet weak var profilePicture: UIImageView!
@@ -19,7 +20,7 @@ class ProfileDetailsViewController: UIViewController {
     
     
    
-    var animationView = LOTAnimationView(name: "MotionCorpse-Jrcanest")
+    var animationView = LOTAnimationView()
     var image: UIImage?
     var name: String?
 
@@ -98,6 +99,7 @@ class ProfileDetailsViewController: UIViewController {
     
 
     @IBAction func rotateButtonTapped(_ sender: UIButton) {
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate)) 
         sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         
         UIView.animate(withDuration: 2.0,
@@ -120,7 +122,7 @@ class ProfileDetailsViewController: UIViewController {
             rotation.duration = 1 // or however long you want ...
             rotation.isCumulative = true
             rotation.repeatCount = 1
-            self.profilePicture.layer.add(rotation, forKey: "rotationAnimation")
+            self.profilePicture.layer.add(rotation, forKey: "transform.rotation")
         })
     }
 
