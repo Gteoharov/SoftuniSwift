@@ -158,15 +158,58 @@
                                     <constraint firstAttribute="height" constant="220" id="lNz-mU-Qlq"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtL-lp-CyB">
+                                <rect key="frame" x="147" y="487" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.74901960779999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1Fs-IG-zOe"/>
+                                    <constraint firstAttribute="height" constant="30" id="hxR-p8-DPF"/>
+                                </constraints>
+                                <state key="normal" title="Fun Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="coolAnimationTapped:" destination="LEJ-3d-fmh" eventType="touchUpInside" id="QyE-x7-MG2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXC-12-80E">
+                                <rect key="frame" x="147.5" y="546" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.74901960779999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="9EG-0s-Qoa"/>
+                                    <constraint firstAttribute="height" constant="30" id="TKh-dn-T8v"/>
+                                </constraints>
+                                <state key="normal" title="Lottie">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="lottieButtonTapped:" destination="LEJ-3d-fmh" eventType="touchUpInside" id="XfJ-pL-unW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Violeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5X2-Y3-z1z">
+                                <rect key="frame" x="161.5" y="92" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="iXC-12-80E" firstAttribute="centerX" secondItem="tFT-ue-hxr" secondAttribute="centerX" id="0mo-Kl-TCq"/>
+                            <constraint firstItem="xtL-lp-CyB" firstAttribute="centerX" secondItem="tFT-ue-hxr" secondAttribute="centerX" id="2n5-pg-ifu"/>
+                            <constraint firstItem="iXC-12-80E" firstAttribute="top" secondItem="xtL-lp-CyB" secondAttribute="bottom" constant="29" id="9Nz-eQ-hFc"/>
                             <constraint firstItem="q4l-OK-hbb" firstAttribute="centerY" secondItem="tFT-ue-hxr" secondAttribute="centerY" id="AtZ-4r-9eb"/>
+                            <constraint firstItem="xtL-lp-CyB" firstAttribute="top" secondItem="q4l-OK-hbb" secondAttribute="bottom" constant="75.5" id="Hju-EX-lcW"/>
+                            <constraint firstItem="5X2-Y3-z1z" firstAttribute="centerX" secondItem="tFT-ue-hxr" secondAttribute="centerX" id="drH-kx-iB4"/>
                             <constraint firstItem="q4l-OK-hbb" firstAttribute="centerX" secondItem="tFT-ue-hxr" secondAttribute="centerX" id="hXN-9y-pxk"/>
+                            <constraint firstItem="5X2-Y3-z1z" firstAttribute="top" secondItem="tFT-ue-hxr" secondAttribute="top" constant="92" id="p5T-W0-rqI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tFT-ue-hxr"/>
                     </view>
                     <connections>
+                        <outlet property="funButtonOutlet" destination="xtL-lp-CyB" id="KNq-CW-fzG"/>
+                        <outlet property="lottieButtonOutlet" destination="iXC-12-80E" id="ITg-yS-0gq"/>
+                        <outlet property="nameLabel" destination="5X2-Y3-z1z" id="nu1-We-eJF"/>
                         <outlet property="profilePicture" destination="q4l-OK-hbb" id="XCw-Ca-vjP"/>
                     </connections>
                 </viewController>

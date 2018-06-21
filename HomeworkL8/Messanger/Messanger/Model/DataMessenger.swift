@@ -35,7 +35,7 @@ struct DataMessenger {
         ],
         [.profileImage: "hristoslav",
          .name: "Hristoslav Teoharov",
-         .lastMessage: "Да пием бира ?",
+         .lastMessage: "Да пием бира 🍺 ? 🍻 ",
          .time: "18:20"
         ],
         [.profileImage: "zvezdata",

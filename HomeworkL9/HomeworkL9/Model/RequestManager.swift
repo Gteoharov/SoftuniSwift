@@ -116,7 +116,7 @@ import Foundation
                     }
                     UserDefaults.standard.synchronize()
                     
-                    NotificationCenter.default.post(name: NSNotification.Name("userDataUpdate"), object: nil)
+                    NotificationCenter.default.post(name: NSNotification.Name("userDataUpdated"), object: nil)
                 } catch {
                     
                 }

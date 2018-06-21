@@ -17,7 +17,7 @@ class MessengerTableViewController: UITableViewController, ButtonTableViewCellDe
         super.viewDidLoad()
         self.tableView.rowHeight = 70.0
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -60,6 +60,7 @@ class MessengerTableViewController: UITableViewController, ButtonTableViewCellDe
         let profileDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileDetailsViewController") as! ProfileDetailsViewController
 
         profileDetailsViewController.image = cell.profileImageView.image!
+        profileDetailsViewController.name = cell.nameLabel.text!
         self.navigationController?.pushViewController(profileDetailsViewController, animated: true)
     }
     
