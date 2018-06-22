@@ -17,9 +17,8 @@ class ProfileDetailsViewController: UIViewController {
     
     @IBOutlet weak var funButtonOutlet: UIButton!
     @IBOutlet weak var lottieButtonOutlet: UIButton!
+    @IBOutlet weak var reloadButtonOutlet: UIButton!
     
-    
-   
     var animationView = LOTAnimationView()
     var image: UIImage?
     var name: String?
@@ -27,18 +26,19 @@ class ProfileDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
-        view.addGestureRecognizer(tap)
-        // Do any additional setup after loading the view.
+        let tapImage = UITapGestureRecognizer(target: self, action: #selector(self.tapImageGesture))
+        self.view.addGestureRecognizer(tap)
+        self.profilePicture.addGestureRecognizer(tapImage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.reloadButtonOutlet.layer.cornerRadius = 5
         self.funButtonOutlet.layer.cornerRadius = 5
         self.lottieButtonOutlet.layer.cornerRadius = 5
         animationView = LOTAnimationView(name: "loading")
+        
         
         self.view.addSubview(animationView)
         
@@ -53,16 +53,20 @@ class ProfileDetailsViewController: UIViewController {
     }
     
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc func tapImageGesture() {
+        profileImageRotate()
+        AudioServicesPlayAlertSound(SystemSoundID(1519))
     }
     
     @objc func tapGesture() {
         self.view.subviews.forEach({$0.layer.removeAllAnimations()})
         self.view.layer.removeAllAnimations()
         self.view.layoutIfNeeded()
+        if animationView.isAnimationPlaying {
+            AudioServicesPlayAlertSound(SystemSoundID(1519))
+        }
         animationView.stop()
+        
     }
     
     @IBAction func coolAnimationTapped(_ sender: UIButton) {
@@ -98,8 +102,7 @@ class ProfileDetailsViewController: UIViewController {
     
     
 
-    @IBAction func rotateButtonTapped(_ sender: UIButton) {
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate)) 
+    @IBAction func reloadButtonTapped(_ sender: UIButton) {
         sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         
         UIView.animate(withDuration: 2.0,
@@ -112,7 +115,14 @@ class ProfileDetailsViewController: UIViewController {
         },
                        completion: { Void in()  }
         )
-        profileImageRotate()
+        self.nameLabel.text = ""
+        nameLabel.animate(newText: name ?? "default data" , characterDelay: 0.1)
+    }
+    
+    private func rotateLabel() {
+        
+        nameLabel.animate(newText: name ?? "default data" , characterDelay: 0.1)
+        
     }
     
     private func profileImageRotate() {
@@ -126,4 +136,19 @@ class ProfileDetailsViewController: UIViewController {
         })
     }
 
+}
+
+extension UILabel {
+    
+    func animate(newText: String, characterDelay: TimeInterval) {
+        DispatchQueue.main.async {
+            self.text = ""
+            for (index, character) in newText.enumerated() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + characterDelay * Double(index)) {
+                    self.text?.append(character)
+                }
+            }
+        }
+    }
+    
 }

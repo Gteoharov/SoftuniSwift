@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2169884F20DC614700AFEF47 /* back.json in Resources */ = {isa = PBXBuildFile; fileRef = 2169884E20DC614700AFEF47 /* back.json */; };
 		218D89DF20DBC5B800ACBB8D /* MotionCorpse-Jrcanest.json in Resources */ = {isa = PBXBuildFile; fileRef = 218D89DE20DBC5B800ACBB8D /* MotionCorpse-Jrcanest.json */; };
-		218D89E120DBC92E00ACBB8D /* PinJump.json in Resources */ = {isa = PBXBuildFile; fileRef = 218D89E020DBC92E00ACBB8D /* PinJump.json */; };
 		218D89E320DBC96C00ACBB8D /* Boat_Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 218D89E220DBC96C00ACBB8D /* Boat_Loader.json */; };
 		218D89E520DBCA2300ACBB8D /* LottieLogo1_masked.json in Resources */ = {isa = PBXBuildFile; fileRef = 218D89E420DBCA2300ACBB8D /* LottieLogo1_masked.json */; };
 		218D89E720DBD40A00ACBB8D /* dna_loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 218D89E620DBD40A00ACBB8D /* dna_loader.json */; };
@@ -29,8 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2169884E20DC614700AFEF47 /* back.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = back.json; path = ../../../../../../Downloads/back.json; sourceTree = "<group>"; };
 		218D89DE20DBC5B800ACBB8D /* MotionCorpse-Jrcanest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "MotionCorpse-Jrcanest.json"; path = "../../../../../iOS/lottie-ios-master/Example/Tests/MotionCorpse-Jrcanest.json"; sourceTree = "<group>"; };
-		218D89E020DBC92E00ACBB8D /* PinJump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PinJump.json; path = "../../../../../iOS/lottie-ios-master/Example/Tests/PinJump.json"; sourceTree = "<group>"; };
 		218D89E220DBC96C00ACBB8D /* Boat_Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Boat_Loader.json; path = "../../../../../iOS/lottie-ios-master/Example/Tests/Boat_Loader.json"; sourceTree = "<group>"; };
 		218D89E420DBCA2300ACBB8D /* LottieLogo1_masked.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = LottieLogo1_masked.json; path = "../../../../../iOS/lottie-ios-master/Example/Tests/LottieLogo1_masked.json"; sourceTree = "<group>"; };
 		218D89E620DBD40A00ACBB8D /* dna_loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dna_loader.json; path = ../../../../../../Downloads/dna_loader.json; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 				218D89EA20DBD54400ACBB8D /* glow_loading.json */,
 				218D89EE20DBD5DC00ACBB8D /* loading.json */,
 				218D89EC20DBD58600ACBB8D /* loader-success-failed.json */,
+				2169884E20DC614700AFEF47 /* back.json */,
 				218D89E220DBC96C00ACBB8D /* Boat_Loader.json */,
-				218D89E020DBC92E00ACBB8D /* PinJump.json */,
 				218D89DE20DBC5B800ACBB8D /* MotionCorpse-Jrcanest.json */,
 				21B8BF7720D7E55300CF31DF /* LaunchScreen.storyboard */,
 				21B8BF7A20D7E55300CF31DF /* Info.plist */,
@@ -218,8 +218,8 @@
 				218D89E320DBC96C00ACBB8D /* Boat_Loader.json in Resources */,
 				21B8BF7920D7E55300CF31DF /* LaunchScreen.storyboard in Resources */,
 				218D89E920DBD46C00ACBB8D /* pulse.json in Resources */,
+				2169884F20DC614700AFEF47 /* back.json in Resources */,
 				21B8BF7620D7E55300CF31DF /* Assets.xcassets in Resources */,
-				218D89E120DBC92E00ACBB8D /* PinJump.json in Resources */,
 				218D89E520DBCA2300ACBB8D /* LottieLogo1_masked.json in Resources */,
 				21B8BF7420D7E55200CF31DF /* Main.storyboard in Resources */,
 				218D89DF20DBC5B800ACBB8D /* MotionCorpse-Jrcanest.json in Resources */,
