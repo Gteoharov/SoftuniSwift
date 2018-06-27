@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeworkL9/Model/RequestManager.swift"
-            timestampString = "551267816.918593"
+            timestampString = "551480802.313442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
             endingLineNumber = "111"
-            landmarkName = "readData()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeworkL9/Controller/ViewController.swift"
-            timestampString = "551267816.918897"
+            timestampString = "551480860.093462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -42,7 +42,7 @@
                   moduleName = "HomeworkL9"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teoharov/Developer/SoftUni%20iOS/Homework/HomeworkL9/HomeworkL9/Controller/ViewController.swift"
-                  timestampString = "551267816.936887"
+                  timestampString = "551797840.648608"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
@@ -57,7 +57,7 @@
                   moduleName = "HomeworkL9"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/teoharov/Developer/SoftUni%20iOS/Homework/HomeworkL9/HomeworkL9/Controller/ViewController.swift"
-                  timestampString = "551267816.939672"
+                  timestampString = "551797840.650148"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "31"

@@ -15,6 +15,8 @@ enum TypeOfData {
 import Foundation
 import UIKit
 
+
+
 struct DataMessenger {
     static var profiles: [[TypeOfData : String]] =
     [
